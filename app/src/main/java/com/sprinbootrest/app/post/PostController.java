@@ -22,26 +22,26 @@ public class PostController {
     private UserRepository userRepository;
 
     @GetMapping("/posts")
-    public List<Post> getAllPosts(){
+    public List<Post> getAllPosts() {
         return postRepository.findAll();
     }
 
     @GetMapping("/users/{id}/posts")
-    public List<Post> getUserPosts(@PathVariable Integer id){
+    public List<Post> getUserPosts(@PathVariable Integer id) {
 
         Optional<User> foundUser = userRepository.findById(id);
-        if(!foundUser.isPresent()){
-            throw new UserNotFoundException("User not found with id : "+id);
+        if (!foundUser.isPresent()) {
+            throw new UserNotFoundException("User not found with id : " + id);
         }
         return foundUser.get().getPosts();
     }
 
     @PostMapping("/user/{id}/posts")
-    public ResponseEntity createPost(@PathVariable Integer id, @RequestBody Post post){
+    public ResponseEntity createPost(@PathVariable Integer id, @RequestBody Post post) {
 
         Optional<User> user = userRepository.findById(id);
-        if(!user.isPresent()){
-            throw new UserNotFoundException("User not found with id : "+id);
+        if (!user.isPresent()) {
+            throw new UserNotFoundException("User not found with id : " + id);
         }
         post.setUser(user.get());
 
