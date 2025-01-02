@@ -20,17 +20,17 @@ public class SwaggerConfig {
 
     public static final ApiInfo DEFAULT;
     public static final Contact DEFAULT_CONTACT = new Contact("Ajay Pise",
-            "http://localhost:8083", "piseajay5@gmail.com");
-    private static final Set<String> DEFAULT_TYPE = new HashSet<>(Arrays.asList("application/json","application/xml"));
+            "http://localhost:8083", "piseajay558@gmail.com");
+    private static final Set<String> DEFAULT_TYPE = new HashSet<>(Arrays.asList("application/json", "application/xml"));
 
     static {
         DEFAULT = new ApiInfo("Restful Web Service Doc",
                 "Api Documentation",
-                "1.0", "urn:tos", DEFAULT_CONTACT, "Apache 2.0", "http://www.apache.org/licenses/LICENSE-2.0", new ArrayList());
+                "1.0", "urn:tos", DEFAULT_CONTACT, "Apache 2.0", "http://www.apache.org/licenses/LICENSE-2.0", new ArrayList<>());
     }
 
     @Bean
-    public Docket api(){
+    public Docket api() {
 
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(DEFAULT)

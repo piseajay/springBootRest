@@ -9,18 +9,18 @@ import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
 import java.util.Locale;
 
 @SpringBootApplication
-public class SpringbootRestApplication {
+public class SpringBootRestApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringbootRestApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBootRestApplication.class, args);
+    }
 
-	@Bean
-	public LocaleResolver localeResolver(){
-		AcceptHeaderLocaleResolver resolver = new AcceptHeaderLocaleResolver();
-		resolver.setDefaultLocale(Locale.US);
-		return resolver;
-	}
+    @Bean
+    public LocaleResolver localeResolver() {
+        AcceptHeaderLocaleResolver resolver = new AcceptHeaderLocaleResolver();
+        resolver.setDefaultLocale(Locale.US);
+        return resolver;
+    }
 
 	/*@Bean
 	public ResourceBundleMessageSource messageSource(){
